@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-Apache Guacamole gateway configuration security auditor (offline, read-only)
+OGuacX — Apache Guacamole Gateway Configuration Auditor. It provides stdlib parsers: Java .properties, user-mapping.xml, guacd.conf (INI), JDBC SQL schema / data dumps, nginx / Apache reverse-proxy snippets, Tomcat server.xml, logback.xml, GUACAMOLE_HOME layouts. Built-in demo/self-test paths and severity gates help validate detections without touching production when those flags are used.
 
 ---
 
@@ -30,10 +30,6 @@ Apache Guacamole gateway configuration security auditor (offline, read-only)
 - Connection hardening — RDP security / ignore-cert, SSH host-key / private-key, VNC & telnet cleartext, clipboard, SFTP / drive, recordings & key logging
 - Default guacadmin (XML + SQL hash), cleartext / MD5 user-mapping passwords, JDBC passwords & TLS modes
 - LDAP encryption, OIDC / SAML / CAS endpoints
-- Version / EOL detection from extension jars & webapp
-- Secrets masked everywhere; --root discovery; CWE + MITRE
-- Export TXT / Markdown / JSON / CSV / SARIF 2.1.0
-- Self-test --demo, CI gates --fail-on / --min-severity
 
 ---
 
@@ -47,7 +43,10 @@ Apache Guacamole gateway configuration security auditor (offline, read-only)
 ## 🚀 Usage
 
 ```bash
-./OGuacX
+./OGuacX                                     # interactive menu
+./OGuacX --scan -r /path/to/root
+./OGuacX --demo
+./OGuacX --help
 ```
 
 ---
